@@ -7,7 +7,7 @@ body {
     padding: 20px;
   }
   a{
-    /* all: unset; */
+    all: unset;
     margin: 10px;
     cursor: pointer;
   }
