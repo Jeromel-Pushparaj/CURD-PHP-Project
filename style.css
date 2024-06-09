@@ -7,8 +7,9 @@ body {
     padding: 20px;
   }
   a{
-    all: unset;
+    /* all: unset; */
     margin: 10px;
+    cursor: pointer;
   }
   .header {
     background-color: #fff;
@@ -18,16 +19,22 @@ body {
   .nav {
     display: flex;
     justify-content: space-between;
+    
   }
   
   .nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    cursor: pointer;
+  }
+  .nav ul:hover{
+    cursor: pointer;
   }
   
   .nav li {
     display: inline-block;
+    cursor: pointer;
   }
   
   /* Style the signup and signin links as buttons */

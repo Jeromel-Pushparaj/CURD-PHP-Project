@@ -15,8 +15,8 @@ session_start();
     <nav class="nav">
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="https://jeromelpushparaj.netlify.app/" target="_blank">Myporfolio</a></li>
+        <li><a href="https://www.linkedin.com/in/jeromel-pushparaj/" target="_blank">Contact</a></li>
         <?php
         include('user.php');
         // Check if a username is stored in the session
