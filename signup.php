@@ -41,7 +41,7 @@ if($signup){
         Signup Successfull <a href="signin.php" class="alert-link">Signin Here</a>. Give it a click to Signin.
     </div>
 <?php
-    }else{
+    }else{ 
 ?>
     <div class="alert alert-danger" role="alert">
         Signup Failed<a href="signup.php" class="alert-link">Signup</a>. Click here to Try Again.
