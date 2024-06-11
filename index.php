@@ -1,5 +1,6 @@
 
 <?php
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -9,18 +10,19 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Blog</title>
     <link rel="icon" href="dev-icon-7.jpg" type="image/icon type">
-    <link rel="stylesheet" href="style.css">
+	
+	<link href="index-head.css" rel="stylesheet">
 </head>
 <body>
 
   <header class="header">
-    <nav class="nav">
+  <nav class="nav">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="https://jeromelpushparaj.netlify.app/" target="_blank">Myporfolio</a></li>
         <li><a href="https://www.linkedin.com/in/jeromel-pushparaj/" target="_blank">Contact</a></li>
         <?php
-        include('user.php');
+        include '_libs/include/user.php';
         // Check if a username is stored in the session
         if (isset($_SESSION['username'])) {
           echo '<li class="right"><a href="#">Welcome, ' . $_SESSION['username'] . '</a></li>';  // Display username if logged in

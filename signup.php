@@ -26,7 +26,7 @@
 </head>
 
 <?php 
-require_once "user.php";
+require_once "_libs/include/user.php";
 $signup = false;
 if(isset($_POST['username'])&&  isset($_POST['password'])){
     $user_name = $_POST['username'];
