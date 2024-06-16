@@ -26,6 +26,7 @@ session_start();
         // Check if a username is stored in the session
         if (isset($_SESSION['username'])) {
           echo '<li class="right"><a href="#">Welcome, ' . $_SESSION['username'] . '</a></li>';  // Display username if logged in
+          echo '<li class="right"><a href="signout.php">Logout</a></li>';
         } else {
           echo '<li class="right"><a href="signup.php">Signup</a></li>';
           echo '<li class="right"><a href="signin.php">Signin</a></li>';  // Display signup and signin buttons if not logged in
