@@ -1,0 +1,99 @@
+/* Ensure that the header spans the full width and is at the top */
+.header {
+    background-color: #333;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed; /* Fix it to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Navigation styling */
+.nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Clear floating elements */
+}
+
+.nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    background-color: #555;
+}
+
+.nav ul li.right {
+    float: right;
+}
+
+/* Ensure content is below the header */
+.container {
+    margin-top: 70px; /* Adjust based on the header height */
+    max-width: 1000px;
+    margin: 70px auto 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+/* Hide the unwanted columns */
+.article-table th:nth-child(1), .article-table td:nth-child(1),
+.article-table th:nth-child(3), .article-table td:nth-child(3) {
+  display: none;
+}
+
+/* Optional styling for the table */
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.article-table th, .article-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.article-table th {
+  background-color: #f2f2f2;
+}
+
+/* Style the actions column */
+.article-table .actions {
+  text-align: right;
+}
+
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    .nav ul li.right {
+        float: none;
+        margin: 10px 0;
+    }
+    .container {
+        margin-top: 100px; /* Adjust for the mobile header height */
+    }
+}

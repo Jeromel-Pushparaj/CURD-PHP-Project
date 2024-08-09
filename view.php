@@ -1,5 +1,6 @@
 <?php
 include './_libs/include/database.php';
+// include './_libs/include/Parsedown.php';
 $conn = Database::getConnection();
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -13,6 +14,14 @@ if (isset($_GET['id'])) {
     // Fetch the article data
     if ($result->num_rows > 0) {
         $article = $result->fetch_assoc();
+        $content = $article['content'];
+
+    // Include Parsedown library
+        require './_libs/include/Parsedown.php';
+        $Parsedown = new Parsedown();
+
+    // Display content
+        $content = $Parsedown->text($content);
     } else {
         echo "Article not found.";
         exit;
@@ -36,7 +45,7 @@ $conn->close();
 </head>
 <body>
     <h1><?php echo htmlspecialchars($article['title']); ?></h1>
-    <p><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
+    <p><?php echo $content ?></p>
     <a href="index.php">Back to Article List</a>
 </body>
 </html>

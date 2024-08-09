@@ -1,6 +1,7 @@
 <?php
 include_once 'include/database.php';
 include_once 'include/user.php';
+include_once 'include/Parsedown.php';
 session_start();
 
 global $__site_config;

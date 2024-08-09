@@ -36,7 +36,7 @@ class User{
     public static function signin($username, $password){
         $conn = Database::getConnection();
         // Prepare statement to prevent SQL injection
-        $stmt = $conn->prepare("SELECT id, username, pass_word FROM users WHERE username = ?");
+        $stmt = $conn->prepare("SELECT id, username, pass_word, privilege FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -48,6 +48,7 @@ class User{
                 session_start();  // Start session for user authentication
                 $_SESSION['user_id'] = $user['id'];  // Store user ID in session
                 $_SESSION['username'] = $username;  // Store username in session (optional)
+                $_SESSION['privilege'] = $user['privilege'];
                 mysqli_close($conn);
                 return true;  // Indicate successful login
             } else {
