@@ -1,8 +1,8 @@
 /* Ensure that the header spans the full width and is at the top */
 .header {
-    background-color: #333;
+    background-color: #007bff;
     padding: 15px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.315);
     width: 100%;
     position: fixed; /* Fix it to the top */
     top: 0;
@@ -39,7 +39,7 @@
 }
 
 .nav ul li a:hover {
-    background-color: #555;
+    background-color: #0076f5;
 }
 
 .nav ul li.right {

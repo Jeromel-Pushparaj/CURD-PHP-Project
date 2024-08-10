@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
-    <title>Create New Article</title>
+    <title>Editing Page</title>
 </script>
     <style>
         .container {
@@ -67,7 +67,7 @@ if (isset($_GET['id'])) {
 </head>
 <body>
     <div class="container">
-        <h1>Create New Article</h1>
+        <h1>Edit the Article</h1>
         <form action="update.php?id=<?php echo $id;?>" method="POST">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" value="<?php echo $article['title']; ?>" required>

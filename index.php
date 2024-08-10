@@ -7,6 +7,16 @@ $sql = "SELECT * FROM articles";
 $result = $conn->query($sql);
 session_start();
 // $isEditor = $_SESSION['privilege'] == 'editor';
+
+
+    // Display content
+    function parsedowning($content){
+        require './_libs/include/Parsedown.php';
+        $Parsedown = new Parsedown();
+        $content = $Parsedown->text($content);
+        return $content;
+    }
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +25,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style_table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <header class="header">
@@ -43,14 +56,24 @@ session_start();
     
     <?php if ($_SESSION['privilege'] == 'editor'): ?>
         <!-- Table view for editors -->
-        <a href="create.php" class="btn btn-primary">Create New Article</a>
+        <a href="create.php" class="btn btn-primary" style="
+    all: unset;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px; /* Rounded button */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+">Create New Article</a>
         <table class="article-table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
                     <th>Content</th>
-                    <th>Actions</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -61,9 +84,9 @@ session_start();
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo substr($row['content'], 0, 100); ?>...</td>
                 <td class="actions">
-                    <a href="view.php?id=<?php echo $row['id']; ?>">View</a> | 
-                    <a href="edit.php?id=<?php echo $row['id']; ?>">Edit</a> | 
-                    <a href="delete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="view.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye" aria-hidden="true"></i></a> 
+                    <a href="edit.php?id=<?php echo $row['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a> 
+                    <a href="delete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>
             <?php endwhile; ?>
@@ -74,8 +97,17 @@ session_start();
         <?php while($row = $result->fetch_assoc()): ?>
         <div class="article">
             <h2><?= $row['title']; ?></h2>
-            <p><?= substr($row['content'], 0, 150); ?>...</p>
-            <a href="view.php?id=<?= $row['id']; ?>">Read more</a>
+
+            <a href="view.php?id=<?= $row['id']; ?>" style="
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px; /* Rounded button */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+">Read <i class="fa fa-book" aria-hidden="true"></i></a>
         </div>
         <?php endwhile; ?>
     <?php endif; ?>
