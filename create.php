@@ -1,3 +1,7 @@
+<?php
+include './_libs/include/submit_article.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +62,7 @@
 <body>
     <div class="container">
         <h1>Create New Article</h1>
-        <form action="submit_article.php" method="POST">
+        <form action="./_libs/include/submit_article.php" method="POST">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" required>
 
