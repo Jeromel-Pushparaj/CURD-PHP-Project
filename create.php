@@ -1,5 +1,5 @@
 <?php
-include './_libs/include/submit_article.php';
+include './_libs/include/action.php';
 
 ?>
 <!DOCTYPE html>
@@ -62,14 +62,14 @@ include './_libs/include/submit_article.php';
 <body>
     <div class="container">
         <h1>Create New Article</h1>
-        <form action="./_libs/include/submit_article.php" method="POST">
+        <form action="submit_article.php" method="POST">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" required>
 
             <label for="articleContent" >Content</label>
             <textarea id="markdown-editor" id="content" name="content"></textarea>
 
-            <button class="sumb" type="submit">Submit Article</button>
+            <button class="sumb" type="submit" name="create">Submit Article</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
