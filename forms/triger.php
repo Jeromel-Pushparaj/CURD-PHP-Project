@@ -1,7 +1,7 @@
 <?php
 // Include the Action class
 include_once 'Action.php';
-include './_libs/include/database.php';
+include '../_libs/include/database.php';
 
 // Database connection
 $mysqli = Database::getConnection();

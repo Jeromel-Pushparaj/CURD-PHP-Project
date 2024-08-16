@@ -1,5 +1,5 @@
 <?php
-include './_libs/include/action.php';
+include '../_libs/include/action.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET['id'];
@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $success = $action->update($id,$title, $content);
 
     if ($success) {
-        header('Location: index.php');
+        header('Location: ../index.php');
     } else {
         echo "Failed to create article.";
     }

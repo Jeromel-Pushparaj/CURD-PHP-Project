@@ -1,0 +1,1 @@
+- convert that triger script to on file with a help of class

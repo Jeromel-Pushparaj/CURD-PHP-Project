@@ -1,5 +1,5 @@
 <?php
-include './_libs/include/database.php';
+include '../_libs/include/database.php';
 $conn = Database::getConnection();
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
 <body>
     <div class="container">
         <h1>Edit the Article</h1>
-        <form action="update.php?id=<?php echo $id;?>" method="POST">
+        <form action="../forms/update.php?id=<?php echo $id;?>" method="POST">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" value="<?php echo $article['title']; ?>" required>
 

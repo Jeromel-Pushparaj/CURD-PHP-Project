@@ -1,5 +1,5 @@
 <?php
-include './_libs/include/database.php';
+include '../_libs/include/database.php';
 // include './_libs/include/Parsedown.php';
 $conn = Database::getConnection();
 if (isset($_GET['id'])) {
@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
         $content = $article['content'];
 
     // Include Parsedown library
-        require './_libs/include/Parsedown.php';
+        require '../_libs/include/Parsedown.php';
         $Parsedown = new Parsedown();
 
     // Display content
@@ -89,7 +89,7 @@ a {
     <div class="article-container">
     <h1><?php echo htmlspecialchars($article['title']); ?></h1>
     <p><?php echo $content ?></p>
-    <a href="index.php">Back to Article List</a>
+    <a href="../index.php">Back to Article List</a>
     </div>
 </body>
 </html>

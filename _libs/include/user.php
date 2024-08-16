@@ -1,5 +1,5 @@
 <?php
-require_once "database.php";
+include_once "database.php";
 class User{
     public static function signup($user, $pass){
         $conn = Database::getConnection();

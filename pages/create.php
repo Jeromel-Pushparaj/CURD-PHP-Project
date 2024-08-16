@@ -1,5 +1,5 @@
 <?php
-include './_libs/include/action.php';
+include '../_libs/include/action.php';
 
 ?>
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ include './_libs/include/action.php';
 <body>
     <div class="container">
         <h1>Create New Article</h1>
-        <form action="submit_article.php" method="POST">
+        <form action="../forms/submit_article.php" method="POST">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" required>
 

@@ -26,19 +26,19 @@
 </head>
 
 <?php
-require_once "_libs/include/user.php";
+include "../_libs/include/user.php";
 if (isset($_POST['username']) && isset($_POST['password'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
 
   if (User::signin($username, $password)) {
-    header("Location: index.php");  // Redirect to home page on successful login
+    header("Location: ../index.php");  // Redirect to home page on successful login
     exit();
   } else {
     // Login failed, display error message
     ?>
     <div class="alert alert-danger" role="alert">
-        Signup Failed<a href="signup.php" class="alert-link">Signup</a>. Click here to Try Again.
+        Signup Failed<a href="./signup.php" class="alert-link">Signup</a>. Click here to Try Again.
     </div>
 <?php
     

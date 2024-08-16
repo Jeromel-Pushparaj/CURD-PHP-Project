@@ -1,5 +1,5 @@
 <?php
-include './_libs/include/database.php';
+include_once 'database.php';
 class Action {
     private $db;
 
@@ -62,8 +62,8 @@ class Action {
     // View all articles
     public function viewAll() {
         // SQL query to select all articles
-        $result = $this->db->query("SELECT * FROM articles");
-        return $result->fetch_all(MYSQLI_ASSOC);
+        // $result = $this->db->query("SELECT * FROM articles");
+        return $this->db->query("SELECT * FROM articles");
     }
 }
 ?>
