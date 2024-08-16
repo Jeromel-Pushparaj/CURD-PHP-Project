@@ -17,10 +17,10 @@ class Action {
     }
 
     // Update an article
-    public function update($id, $title, $content, $image) {
+    public function update($id, $title, $content) {
         // SQL query to update an existing article
-        $stmt = $this->db->prepare("UPDATE articles SET title = ?, content = ?, image = ? WHERE id = ?");
-        $stmt->bind_param("sssi", $title, $content, $image, $id);
+        $stmt = $this->db->prepare("UPDATE articles SET title = ?, content = ? WHERE id = ?");
+        $stmt->bind_param("ssi", $title, $content, $id);
         return $stmt->execute();
     }
 
