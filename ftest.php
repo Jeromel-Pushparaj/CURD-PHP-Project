@@ -22,5 +22,6 @@ print(loading_templates("header"));
     <?php
 session_start();
 print_r($_SESSION);
-print_r($_SERVER)
+print_r($_SERVER);
+print($_SERVER['PHP_SELF']);
 ?>
